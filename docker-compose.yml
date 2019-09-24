@@ -1,21 +1,23 @@
 version: "3.3"
 
 networks:
-    paperplane:
-        driver: bridge
+   paperplane:
+      driver: bridge
 
 services:
-    paperplane:
-        build: .
-        links:
-           - mongoserver
-        networks:
-           - paperplane
-    mongoserver:
-        image: bitnami/mongodb
-        networks:
-           - paperplane
-        environment:
-           - MONGODB_USERNAME=paperplane
-           - MONGODB_PASSWORD=paperplane
-           - MONGODB_DATABASE=userbot
+   paperplane:
+      build: .
+      links:
+         - mongoserver
+      networks:
+         - paperplane
+      restart: always
+   mongoserver:
+      image: bitnami/mongodb
+      networks:
+         - paperplane
+      restart: always
+      environment:
+         - MONGODB_USERNAME=paperplane
+         - MONGODB_PASSWORD=paperplane
+         - MONGODB_DATABASE=userbot
