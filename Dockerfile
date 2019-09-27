@@ -128,6 +128,7 @@ RUN set -ex; \
 		\) -exec rm -rf '{}' +; \
 	rm -f get-pip.py
 
+# Package all the stuffs
 RUN apk add --no-cache --virtual .build-deps \
 	libpq \
 	musl \
@@ -145,14 +146,13 @@ RUN apk add --no-cache --virtual .build-deps \
 	zlib-dev \
 	libjpeg \
 	libjpeg-turbo-dev \
-	linux-headers
-
-RUN pip install --no-cache-dir -r \
-	https://raw.githubusercontent.com/RaphielGang/Paperplane-Dockerstation/coredocker/requirements.txt
-
-RUN apk del .build-deps
-
-RUN apk add --no-cache \
+	linux-headers \
+	\
+	&& pip install --no-cache-dir -r \
+	https://raw.githubusercontent.com/RaphielGang/Paperplane-Dockerstation/coredocker/requirements.txt \
+	&& apk del .build-deps \
+	\
+	&& apk add --no-cache \
 	git \
 	neofetch \
 	curl \
