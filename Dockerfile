@@ -7,7 +7,6 @@ FROM clearlinux:base
 RUN swupd bundle-add \
 	python-extras \
 	python3-basic \
-	devpkg-base \
 	libxml2 \
 	devpkg-libxml2 \
 	devpkg-libwebp \
@@ -28,8 +27,7 @@ RUN swupd bundle-add \
 	devpkg-libxslt \
 	devpkg-libxml2 \
 	devpkg-zlib \
-	devpkg-libjpeg-turbo \
-	devpkg-base
+	devpkg-libjpeg-turbo
 
 # Add additional dependencies
 RUN swupd bundle-add \
