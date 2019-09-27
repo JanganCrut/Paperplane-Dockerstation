@@ -145,7 +145,7 @@ RUN apk add --no-cache --update \
 	py-requests
 
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r https://raw.githubusercontent.com/RaphielGang/Paperplane-Dockerstation/coredocker/requirements.txt
 
 RUN mkdir /app
 
