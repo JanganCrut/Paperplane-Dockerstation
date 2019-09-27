@@ -1,0 +1,8 @@
+language: bash
+dist: xenial
+
+services:
+  - docker
+
+script:
+  - bash build.sh
