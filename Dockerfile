@@ -1,4 +1,4 @@
-FROM baalajimaestro/userbot_python:latest
+FROM raphielscape/paperplanebase:latest
 
 ENV PATH="/app/bin:$PATH"
 WORKDIR /app
@@ -13,4 +13,4 @@ COPY ./userbot.session ./config.env* ./client_secrets.json* ./secret.json* /app/
 #
 # Finalization
 #
-CMD ["bash","init/start.sh"]
+CMD ["sh","init/start.sh"]
