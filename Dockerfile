@@ -129,12 +129,7 @@ RUN set -ex; \
 	rm -f get-pip.py
 
 RUN apk add --no-cache --virtual .build-deps \
-	git \
-	redis \
 	libpq \
-	curl \
-	sudo \
-	neofetch \
 	musl \
 	zlib \
 	jq \
@@ -156,6 +151,13 @@ RUN pip install --no-cache-dir -r \
 	https://raw.githubusercontent.com/RaphielGang/Paperplane-Dockerstation/coredocker/requirements.txt
 
 RUN apk del .build-deps
+
+RUN apk add --no-cache \
+	git \
+	neofetch \
+	curl \
+	neofetch \
+	redis
 
 RUN mkdir /app
 
