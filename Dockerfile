@@ -5,8 +5,13 @@ FROM clearlinux:base
 # for Paperplane
 #
 RUN swupd bundle-add \
+	jq \
+	git \
+	curl \
 	python-extras \
 	python3-basic \
+	sysadmin-basic \
+	redis-native \
 	libxml2 \
 	devpkg-libxml2 \
 	devpkg-libwebp \
@@ -28,14 +33,6 @@ RUN swupd bundle-add \
 	devpkg-libxml2 \
 	devpkg-zlib \
 	devpkg-libjpeg-turbo
-
-# Add additional dependencies
-RUN swupd bundle-add \
-	git \
-	sysadmin-basic \
-	curl \
-	redis-native \
-	jq
 
 #
 # Sandbox used by Paperplane
