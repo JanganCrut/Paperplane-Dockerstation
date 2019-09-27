@@ -4,7 +4,8 @@ FROM clearlinux:base
 # Download and install all the core bundles
 # for Paperplane
 #
-RUN swupd bundle-add \
+RUN swupd update --no-boot-update $swupd_args \
+    && swupd bundle-add \
 	jq \
 	git \
 	curl \
@@ -32,7 +33,8 @@ RUN swupd bundle-add \
 	devpkg-libxslt \
 	devpkg-libxml2 \
 	devpkg-zlib \
-	devpkg-libjpeg-turbo
+	devpkg-libjpeg-turbo \
+	&& rm -rf /var/lib/swupd/*
 
 #
 # Sandbox used by Paperplane
