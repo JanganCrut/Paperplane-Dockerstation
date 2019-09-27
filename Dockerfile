@@ -16,21 +16,20 @@ RUN swupd bundle-add \
 	devpkg-libxslt \
 	devpkg-zlib \
 	devpkg-libjpeg-turbo \
-	\
 # Install the required dependencies
 	&& pip install --no-cache-dir -r \
 	https://raw.githubusercontent.com/RaphielGang/Paperplane-Dockerstation/coredocker/requirements.txt \
 # Remove one-time usage bundles
 	&& swupd bundle-remove \
-	c-basic \
 	libxml2 \
-	devpkg-libxml2 \
 	devpkg-libwebp \
 	devpkg-libffi \
 	devpkg-openssl \
 	devpkg-libxslt \
+	devpkg-libxml2 \
 	devpkg-zlib \
 	devpkg-libjpeg-turbo \
+	c-basic
 
 # Add additional dependencies
 RUN swupd bundle-add \
