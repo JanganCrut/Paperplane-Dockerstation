@@ -14,8 +14,8 @@ function sendTG() {
 
 sendTG "\`Docker image is being updated!\`"
 
-docker build . -t raphielscape/paperplanebase:latest
-docker tag raphielscape/paperplanebase:latest raphielscape/paperplanebase:latest
+docker build . -t raphielscape/paperplanebase:clearlinux
+docker tag raphielscape/paperplanebase:clearlinux raphielscape/paperplanebase:clearlinux
 echo "$OWO" | docker login -u raphielscape --password-stdin >/dev/null 2>&1
 docker push raphielscape/paperplanebase
 
