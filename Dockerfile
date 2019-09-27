@@ -128,30 +128,40 @@ RUN set -ex; \
 		\) -exec rm -rf '{}' +; \
 	rm -f get-pip.py
 
-RUN apk add --no-cache --update \
+RUN apk add --no-cache --virtual .build-deps \
 	git \
-	python3 \
 	redis \
 	libpq \
 	curl \
 	sudo \
 	neofetch \
 	musl \
-	py-tz \
-	py3-aiohttp \
-	py-six \
-	py-click \
-	py-pillow \
-	py-requests
+	zlib \
+	jq \
+	pv \
+	gcc \
+	libxml2 \
+	libwebp-dev \
+	libffi-dev \
+	openssl-dev \
+	musl-dev \
+	libxslt-dev \
+	libxml2-dev \
+	zlib-dev \
+	libjpeg \
+	libjpeg-turbo-dev \
+	linux-headers
 
+RUN pip install --no-cache-dir -r \
+	https://raw.githubusercontent.com/RaphielGang/Paperplane-Dockerstation/coredocker/requirements.txt
 
-RUN pip install --no-cache-dir -r https://raw.githubusercontent.com/RaphielGang/Paperplane-Dockerstation/coredocker/requirements.txt
+RUN apk del .build-deps
 
 RUN mkdir /app
 
-# The sandbox which can be used for the userbot
-# Clone your stuff here
-# Pip deps are updooted already
+#
+# Sandbox used by Paperplane
+#
 
 RUN chmod 777 /app
 
