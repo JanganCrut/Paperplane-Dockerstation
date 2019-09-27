@@ -4,6 +4,8 @@ FROM clearlinux:base
 # Download and install all the core bundles
 # for Paperplane
 #
+ARG swupd_args
+
 RUN swupd update --no-boot-update $swupd_args \
     && swupd bundle-add \
 	jq \
