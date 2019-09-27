@@ -130,11 +130,8 @@ RUN set -ex; \
 
 # Package all the stuffs
 RUN apk add --no-cache --virtual .build-deps \
-	libpq \
 	musl \
 	zlib \
-	jq \
-	pv \
 	gcc \
 	libxml2 \
 	libwebp-dev \
@@ -144,7 +141,6 @@ RUN apk add --no-cache --virtual .build-deps \
 	libxslt-dev \
 	libxml2-dev \
 	zlib-dev \
-	libjpeg \
 	libjpeg-turbo-dev \
 	linux-headers \
 	\
@@ -157,14 +153,16 @@ RUN apk add --no-cache --virtual .build-deps \
 	neofetch \
 	curl \
 	neofetch \
-	redis
-
-RUN mkdir /app
+	redis \
+	libjpeg \
+	libpq \
+	jq \
+	pv
 
 #
 # Sandbox used by Paperplane
 #
 
-RUN chmod 777 /app
+RUN mkdir /app && chmod 777 /app
 
 CMD ["python3"]
