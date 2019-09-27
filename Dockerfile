@@ -35,7 +35,6 @@ RUN swupd bundle-add \
 	sysadmin-basic \
 	curl \
 	redis-native \
-	libjpeg \
 	jq
 
 #
