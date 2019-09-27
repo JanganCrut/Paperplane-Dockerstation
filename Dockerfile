@@ -1,3 +1,7 @@
+#
+# We're using Alpine linux by default.
+# to use clearlinux, change latest to clearlinux
+#
 FROM raphielscape/paperplanebase:latest
 
 ENV PATH="/app/bin:$PATH"
