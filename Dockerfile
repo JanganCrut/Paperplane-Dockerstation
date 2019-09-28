@@ -155,6 +155,7 @@ RUN apk add --no-cache --virtual .build-deps \
 	neofetch \
 	redis \
 	libjpeg \
+	libwebp \
 	libpq \
 	jq \
 	pv
