@@ -26,16 +26,7 @@ RUN swupd update --no-boot-update $swupd_args \
 # Install the required dependencies
 	&& pip install --no-cache-dir -r \
 	https://raw.githubusercontent.com/RaphielGang/Paperplane-Dockerstation/coredocker/requirements.txt \
-# Remove one-time usage bundles
-	&& swupd bundle-remove \
-	libxml2 \
-	devpkg-libwebp \
-	devpkg-libffi \
-	devpkg-openssl \
-	devpkg-libxslt \
-	devpkg-libxml2 \
-	devpkg-zlib \
-	devpkg-libjpeg-turbo \
+# Remove cached swupd bundles
 	&& rm -rf /var/lib/swupd/*
 
 #
