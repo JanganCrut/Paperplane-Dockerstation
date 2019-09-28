@@ -21,6 +21,7 @@ RUN swupd update --no-boot-update $swupd_args \
 	devpkg-openssl \
 	devpkg-libxslt \
 	devpkg-zlib \
+	devpkg-libwebp \
 	lib-imageformat \
 # Install the required dependencies
 	&& pip install --no-cache-dir -r \
