@@ -129,7 +129,7 @@ RUN set -ex; \
 	rm -f get-pip.py
 
 # Package all the stuffs
-RUN apk add --no-cache --virtual .build-deps \
+RUN apk add --no-cache \
 	musl \
 	zlib \
 	gcc \
@@ -143,11 +143,8 @@ RUN apk add --no-cache --virtual .build-deps \
 	zlib-dev \
 	libjpeg-turbo-dev \
 	linux-headers \
-	\
 	&& pip install --no-cache-dir -r \
 	https://raw.githubusercontent.com/RaphielGang/Paperplane-Dockerstation/coredocker/requirements.txt \
-	&& apk del .build-deps \
-	\
 	&& apk add --no-cache \
 	git \
 	neofetch \
