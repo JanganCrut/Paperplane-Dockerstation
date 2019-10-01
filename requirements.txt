@@ -25,10 +25,11 @@ search-engine-parser
 spotify_token
 pymongo[srv]
 redis
-dnspython
 lxml
 humanize
 pyDownload
 PyDrive
 psutil
 pylast
+pyqrcode
+qrtools
