@@ -7,7 +7,7 @@ FROM raphielscape/paperplanebase:latest
 ENV PATH="/app/bin:$PATH"
 WORKDIR /app
 
-RUN git clone https://github.com/RaphielGang/Telegram-Paperplane.git -b staging /app
+RUN git clone https://github.com/RaphielGang/Telegram-Paperplane.git -b compose /app
 
 #
 # Copies session and config(if it exists)
