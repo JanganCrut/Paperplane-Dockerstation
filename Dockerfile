@@ -143,10 +143,10 @@ RUN apk add --no-cache \
 	zlib-dev \
 	libjpeg-turbo-dev \
 	linux-headers \
+	git \
 	&& pip install --no-cache-dir -r \
 	https://raw.githubusercontent.com/RaphielGang/Paperplane-Dockerstation/coredocker/requirements.txt \
 	&& apk add --no-cache \
-	git \
 	neofetch \
 	curl \
 	neofetch \
