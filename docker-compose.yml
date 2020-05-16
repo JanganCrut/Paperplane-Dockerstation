@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.7"
 
 networks:
    paperplane:
@@ -7,16 +7,24 @@ networks:
 services:
    paperplane:
       build: .
+      environment: 
+         PATH: '/app/bin:$PATH'
+      working_dir: /app
+      volumes: 
+         - "./userbot.session:/app/userbot.session"
+         - "./config.env:/app/config.env"
       links:
          - mongoserver
       networks:
          - paperplane
-      restart: always
+      depends_on: 
+         - mongoserver
+      restart: unless-stopped
    mongoserver:
       image: bitnami/mongodb
       networks:
          - paperplane
-      restart: always
+      restart: unless-stopped
       environment:
          - MONGODB_USERNAME=paperplane
          - MONGODB_PASSWORD=paperplane
