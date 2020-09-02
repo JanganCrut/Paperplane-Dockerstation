@@ -165,4 +165,4 @@ RUN apk add --no-cache \
 
 RUN mkdir /app && chmod 777 /app
 
-CMD ["python3"]
+CMD ["sh"]
