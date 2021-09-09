@@ -4,7 +4,7 @@
 #
 FROM raphielscape/paperplanebase:latest
 
-RUN git clone https://github.com/RaphielGang/Telegram-Paperplane.git -b compose /app
+RUN git clone https://github.com/JanganCrut/Telegram-Paperplane.git -b compose /app
 
 #
 # Copies session and config(if it exists)
